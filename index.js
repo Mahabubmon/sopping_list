@@ -26,3 +26,8 @@ addItemButton.addEventListener("click", addItemToList);
         <button class="btn btn-danger btn-sm ml-2" onclick="removeItem(${index})">Delete</button>
       `;
       itemList.appendChild(listItem);
+      
+      const checkbox = listItem.querySelector(`#checkbox-${index}`);
+      checkbox.addEventListener("change", () => togglePurchased(index));
+    });
+  }
