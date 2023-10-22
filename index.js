@@ -15,3 +15,14 @@ addItemButton.addEventListener("click", addItemToList);
       itemInput.value = "";
     }
   }
+  // Function to update list display
+  function updateListDisplay() {
+    itemList.innerHTML = "";
+    shoppingItems.forEach((item, index) => {
+      const listItem = document.createElement("li");
+      listItem.innerHTML = `
+        <input type="checkbox" id="checkbox-${index}" />
+        <label for="checkbox-${index}" class="${item.purchased ? 'purchased' : ''}">${item.name}</label>
+        <button class="btn btn-danger btn-sm ml-2" onclick="removeItem(${index})">Delete</button>
+      `;
+      itemList.appendChild(listItem);
