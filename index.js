@@ -4,3 +4,14 @@ const itemInput = document.getElementById("itemInput");
     const shoppingItems = [];
 // Add event listener to "Add Item" button
 addItemButton.addEventListener("click", addItemToList);
+
+  // Function to add item to the list
+  function addItemToList() {
+    const itemName = itemInput.value.trim();
+    if (itemName !== "") {
+      const newItem = { name: itemName, purchased: false };
+      shoppingItems.push(newItem);
+      updateListDisplay();
+      itemInput.value = "";
+    }
+  }
