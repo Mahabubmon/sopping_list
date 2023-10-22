@@ -37,3 +37,10 @@ addItemButton.addEventListener("click", addItemToList);
     shoppingItems[index].purchased = !shoppingItems[index].purchased;
     updateListDisplay();
   }
+
+  // Function to remove item from the list
+  function removeItem(index) {
+    shoppingItems.splice(index, 1);
+    updateListDisplay();
+  }
+
