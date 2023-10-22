@@ -31,3 +31,9 @@ addItemButton.addEventListener("click", addItemToList);
       checkbox.addEventListener("change", () => togglePurchased(index));
     });
   }
+
+   // Function to toggle purchased status
+   function togglePurchased(index) {
+    shoppingItems[index].purchased = !shoppingItems[index].purchased;
+    updateListDisplay();
+  }
